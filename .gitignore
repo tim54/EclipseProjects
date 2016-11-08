@@ -10,3 +10,25 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+
+.metadata/
+CtCi/
+CtCi01/
+ch10/
+ch11/
+ch11a/
+ch12/
+ch13/
+ch14/
+ch24/
+ch28/
+ch29/
+ch5/
+ch6/
+ch7/
+ch8/
+ch9/
+initializatin01/
+initialization/
+lmbdas/
+other/

@@ -17,7 +17,6 @@ public class fileCopier {
               frame.setVisible(true);
            }
         });
-		
 	}
 
 }
