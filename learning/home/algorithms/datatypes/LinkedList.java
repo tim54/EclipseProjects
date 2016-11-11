@@ -1,4 +1,4 @@
-package home.algorithms;
+package home.algorithms.datatypes;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
@@ -75,6 +75,7 @@ public class LinkedList<Item> implements Iterable<Item>{
 	}
 	
 	public void revertList(){
+		end = first;
 		Node focusNode = first;
 		Node previousNode = null;
 		Node tmp = new Node();
@@ -88,10 +89,11 @@ public class LinkedList<Item> implements Iterable<Item>{
 				previousNode.next = null;
 			} else {
 				previousNode.next = tmp.next;
-				tmp.next = focusNode;
+				tmp.next = previousNode;
 			}
-			first = end;
 		}
+		focusNode.next = previousNode;
+		first = focusNode;
 	}
 
 	public static void main(String[] args) {
