@@ -58,5 +58,26 @@ public class LinkedList {
 			tmp.next = newNode;
 		}
 	}
+	
+	public void revertList(){
+		Node focusNode = beg;
+		Node previousNode = null;
+		Node tmp = null;
+		
+		while(focusNode.next != null){
+			previousNode = focusNode;
+			focusNode = focusNode.next;
+			
+			if (previousNode == beg){
+				previousNode.next = null;
+				tmp = previousNode;
+			} else {
+				previousNode.next = tmp;
+				tmp = previousNode;
+			}
+		}
+		
+		focusNode.next = previousNode;
+	}
 
 }
