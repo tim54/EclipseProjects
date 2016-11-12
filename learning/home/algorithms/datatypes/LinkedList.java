@@ -20,6 +20,12 @@ public class LinkedList<Item> implements Iterable<Item>{
 		n = 0;
 	}
 	
+	public LinkedList(LinkedList<Item> list){
+		for (Item item : list){
+			this.add(item);
+		}
+	}
+	
 	public boolean isEmpty() {
 		return first == null;
 	}
