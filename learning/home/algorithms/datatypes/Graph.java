@@ -91,13 +91,11 @@ public class Graph {
 	public static void main(String[] args) throws IOException {
 		String userdir = System.getProperty("user.dir");
 		System.out.println(userdir);
-		//try (FileInputStream fin = new FileInputStream(userdir + "\\home\\algorithms\\datatypes\\GraphData.txt")) {
-			// In in = new In(args[0]);
+
 		File file = new File(userdir + "\\home\\algorithms\\datatypes\\GraphData.txt");
 	        Graph G = new Graph(new In(file));
 	        System.out.println(G);
-		//}
-		// TODO Auto-generated method stub
+
 	}
 
 }

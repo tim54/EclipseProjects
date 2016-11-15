@@ -26,12 +26,69 @@ public class BinaryLogic {
 		
 		return counter;
 	}
+	
+	public static int repeatedArithmeticShift(int x, int count) {
+		for (int i = 0; i < count; i++) {
+			x >>= 1;
+			System.out.println(x);
+		}
+		return x;
+	}
+
+	public static int repeatedLogicalShift(int x, int count) {
+		for (int i = 0; i < count; i++) {
+			x >>>= 1;
+			System.out.println(x);
+		}
+		return x;
+	}
+	
+	public static boolean getBit(int num, int i) {
+		return ((num & (1 << (i - 1))) != 0);
+	}
+	
+	public static int setBit(int num, int i) {
+		return num | (1 << (i - 1));
+	}
+	
+	public static int clearBit(int num, int i) {
+		int mask = ~(1 << (i - 1));
+		return num & mask;
+	}
+	
+	public static int clearBitsMSBthroughI(int num, int i) {
+		int mask = (1 << i) - 1;
+		return num & mask;
+	}
+	
+	// To clear all bits from i through 0 (inclusive), we take a sequence of all1s (which is -1) and shift it left by i + 1 bits.
+	public static int clearBitslthrough0(int num, int i) {
+		int mask = (-1 << (i + 1));
+		return num & mask;
+	}
+	
+	int updateBit(int num, int i, boolean bitIs1) {
+		int value = bitIs1 ? 1 : 0;
+		int mask = ~(1 << i);
+		return (num & mask) | (value << i);
+	}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		int number = 1000;
 		System.out.println(Integer.bitCount(number));
 		System.out.println(intBytesCount(number));
+		
+		repeatedArithmeticShift(-number, 10);
+		repeatedLogicalShift(-number, 10);
+		
+		System.out.println(getBit(flagbit3, 2));
+		System.out.println(getBit(flagbit3, 3));
+		System.out.println(getBit(flagbit3, 4));
+		
+		System.out.println(getBit(setBit(0, 3), 4));
+		System.out.println(getBit(setBit(0, 4), 4));
+		System.out.println(getBit(setBit(0, 5), 4));
 
 	}
 
