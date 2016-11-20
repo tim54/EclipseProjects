@@ -73,8 +73,8 @@ public class fileCopierFrame extends JFrame {
 		add(panel, BorderLayout.CENTER);
 		pack();
 		
-		File curDir = new File(dir1);
-		File[] fileList = curDir.listFiles();
+		//File curDir = new File(dir1);
+		//File[] fileList = curDir.listFiles();
 		
 		
 	}
