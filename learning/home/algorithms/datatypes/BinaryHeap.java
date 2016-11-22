@@ -1,4 +1,5 @@
-package home.algorithms;
+package home.algorithms.datatypes;
+
 
 /**
  * http://courses.cs.washington.edu/courses/cse373/11wi/homework/5/BinaryHeap.java

@@ -1,4 +1,0 @@
-1. Read directory content in a data structure (List)
-2. Save to the cassandra
-3. Add button "Analyse"
-4. Analyse -> read from database and compare -> return diff list (in a separate window)

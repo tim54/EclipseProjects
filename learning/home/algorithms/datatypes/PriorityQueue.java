@@ -1,4 +1,4 @@
-package home.algorithms;
+package home.algorithms.datatypes;
 
 /**
  * CSE 373, Winter 2011, Jessica Miller

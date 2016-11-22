@@ -1,4 +1,4 @@
-package home.algorithms;
+package home.algorithms.datatypes;
 
 import java.util.NoSuchElementException;
 

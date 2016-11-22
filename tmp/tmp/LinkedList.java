@@ -1,83 +1,54 @@
 package tmp;
 
-public class LinkedList {
+import java.util.Iterator;
+import java.util.NoSuchElementException;
+
+public class LinkedList<T> implements Iterable<T> {
 	
 	private class Node {
-		private String string;
+		private T data;
+		private Node next;
 		
-		public Node next = null;
-		
-		public Node(){
-			string = "";
-			next = null;
-		}
-		
-		public Node(String string) {
-			this.string = string;
+		public Node(T data){
+			this.data = data;
 		}
 	}
 	
-	private Node beg = null;
+	private Node first;
+	private int n;
+	
+	public LinkedList(T data){
+		Node newNode = new Node(data);
+		if (first == null) {
+			first = newNode;
+		} else {
+			newNode.next = first;
+			first = newNode;
+		}
+		n++;
+	}
+	
+	public Iterator<T> iterator(){
+		return new ListIterator();
+	}
+	
+	private class ListIterator implements Iterator<T>{
+		private Node current = first;
+		
+		public boolean hasNext() { return current != null; }
+		public void remove() { throw new UnsupportedOperationException(); }
+		
+		public T next() {
+			if (!hasNext()) { throw new NoSuchElementException(); }
+			T data = current.data;
+			current = current.next;
+			return data;
+		}
+	}
 
-	public void LinkedList(String string) {
-		if (beg == null) {
-			beg = new Node(string);
-		}
-	}
-	
-	public void add(String string) {
-		if (beg == null) {
-			beg = new Node(string);
-		} else {
-			Node tmp = new Node();
-			while (true) {
-				if (tmp.next != null){
-					tmp = tmp.next;
-				} else {
-					tmp.next = new Node(string);
-					return;
-				}
-			}
-		}
-	}
-	
-	public void addBefore(String string, String before) {
-		Node newNode = new Node(string);
-		if (beg == null) {
-			beg = newNode;
-		} else {
-			Node tmp = new Node();
-			while (tmp.next != null){
-				if (tmp.string.equals(before)){
-					newNode.next = tmp.next;
-					tmp.next = newNode;
-					return;
-				}
-				tmp = tmp.next;
-			}
-			tmp.next = newNode;
-		}
-	}
-	
-	public void revertList(){
-		Node focusNode = beg;
-		Node previousNode = null;
-		Node tmp = null;
-		
-		while(focusNode.next != null){
-			previousNode = focusNode;
-			focusNode = focusNode.next;
-			
-			if (previousNode == beg){
-				previousNode.next = null;
-				tmp = previousNode;
-			} else {
-				previousNode.next = tmp;
-				tmp = previousNode;
-			}
-		}
-		
-		focusNode.next = previousNode;
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
 	}
 
 }
