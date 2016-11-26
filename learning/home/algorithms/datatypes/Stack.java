@@ -26,6 +26,11 @@ public class Stack<Item> implements Iterable<Item>{
 		return n;
 	}
 	
+	public Item peek() {
+		if (isEmpty()) { throw new EmptyStackException(); }
+		return first.item;
+	}
+	
 	public void push(Item item) {
 		Node<Item> oldFirst = first;
 		first = new Node<Item>();
@@ -40,11 +45,6 @@ public class Stack<Item> implements Iterable<Item>{
 		first = first.next;
 		n--;
 		return item;
-	}
-	
-	public Item peek() {
-		if (isEmpty()) { throw new EmptyStackException(); }
-		return first.item;
 	}
 	
 	public String toString() {
