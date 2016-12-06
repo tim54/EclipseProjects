@@ -3,7 +3,7 @@ package home.algorithms.datatypes;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-public class LinkedList<Item> implements Iterable<Item>{
+public class Bag<Item> implements Iterable<Item>{
 	
 	private Node first;
 	private Node end;
@@ -14,13 +14,13 @@ public class LinkedList<Item> implements Iterable<Item>{
 		private Node next;
 	}
 	
-	public LinkedList() {
+	public Bag() {
 		first = null;
 		end = null;
 		n = 0;
 	}
 	
-	public LinkedList(LinkedList<Item> list){
+	public Bag(Bag<Item> list){
 		for (Item item : list){
 			this.add(item);
 		}
@@ -105,7 +105,7 @@ public class LinkedList<Item> implements Iterable<Item>{
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		LinkedList<Integer> intList = new LinkedList<>();
+		Bag<Integer> intList = new Bag<>();
 		intList.add(1);
 		intList.add(2);
 		intList.add(3);

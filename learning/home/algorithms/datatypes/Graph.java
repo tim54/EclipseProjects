@@ -13,7 +13,7 @@ public class Graph {
 	
 	private final int V;
 	private int E;
-	private LinkedList<Integer>[] adj;
+	private Bag<Integer>[] adj;
 	
 	@SuppressWarnings("unchecked")
 	public Graph(int v) {
@@ -21,9 +21,9 @@ public class Graph {
 		V = v;
 		E = 0;
 		
-		adj = (LinkedList<Integer>[]) new LinkedList[v];
+		adj = (Bag<Integer>[]) new Bag[v];
 		for (int i = 0; i < V; i++) {
-			adj[i] = new LinkedList<Integer>();
+			adj[i] = new Bag<Integer>();
 		}
 	}
 	
@@ -43,7 +43,7 @@ public class Graph {
 		this.E = g.E();
 		
 		for (int i = 0; i < g.V(); i++){
-			this.adj[i] = new LinkedList<Integer>(g.adj[i]);
+			this.adj[i] = new Bag<Integer>(g.adj[i]);
 		}
 	}
 	

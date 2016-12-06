@@ -22,7 +22,7 @@ public class DBProcessor {
 		//Executing the query
 		session.execute(query);
 		//using the KeySpace
-		session.execute("USE tp");
+		session.execute("USE tmp1");
 		System.out.println("Keyspace created");
 
 	}
