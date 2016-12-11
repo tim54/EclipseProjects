@@ -120,7 +120,6 @@ public class ResizingArrayQueue<Item> implements Iterable<Item> {
         return q[first];
     }
 
-
     /**
      * Returns an iterator that iterates over the items in this queue in FIFO order.
      * @return an iterator that iterates over the items in this queue in FIFO order
