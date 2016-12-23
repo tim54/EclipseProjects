@@ -43,8 +43,8 @@ public class fileCopierFrame extends JFrame {
 		
 		panel.add(pathToCompare1);
 		
-		panel.add(new JLabel("File to compare 1:", SwingConstants.RIGHT));
-		fileField1 = new JTextField("File 1", 20);
+		panel.add(new JLabel("Directory to compare 1:", SwingConstants.RIGHT));
+		fileField1 = new JTextField("Directory 1", 20);
 		panel.add(fileField1);
 		
 		panel.add(new JLabel("Path to compare:", SwingConstants.RIGHT));
@@ -66,8 +66,8 @@ public class fileCopierFrame extends JFrame {
 		
 		panel.add(pathToCompare2);
 		
-		panel.add(new JLabel("File to compare 2:", SwingConstants.RIGHT));
-		fileField2 = new JTextField("File 2", 20);
+		panel.add(new JLabel("Directory to compare 2:", SwingConstants.RIGHT));
+		fileField2 = new JTextField("Directory 2", 20);
 		panel.add(fileField2);
 		
 		add(panel, BorderLayout.CENTER);
