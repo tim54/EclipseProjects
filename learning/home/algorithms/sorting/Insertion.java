@@ -1,4 +1,4 @@
-package home.algorithms.search;
+package home.algorithms.sorting;
 
 import java.util.Comparator;
 

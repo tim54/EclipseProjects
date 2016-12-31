@@ -1,4 +1,4 @@
-package home.algorithms.search;
+package home.algorithms.sorting;
 
 public class Shell {
 	
