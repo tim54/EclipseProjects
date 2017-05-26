@@ -1,5 +1,7 @@
 package home.filecopier;
 
+import java.io.File;
+
 import org.junit.Before;
 import org.junit.BeforeClass;
 
@@ -36,7 +38,18 @@ extends TestCase
 	 */
 	public void testApp()
 	{
-		System.out.println("in test");
-		assertTrue( true );
+        System.out.println("in createCertainNumberOfFilesInDirectory()");
+		
+		File dirname = new File("test_data");
+		String filePrefix = "Files#1-";
+		int filesNumber = 10;
+		
+		utility.directoryGenerator(dirname, filePrefix, filesNumber);
+		
+		assertEquals("Number of files generated equals to 10", utility.countFilesInDirectory(dirname), 10);
+		
+		utility.emptyDirectory(dirname);
+		
+		assertEquals("Number of files generated equals to 0", utility.countFilesInDirectory(dirname), 0);
 	}
 }

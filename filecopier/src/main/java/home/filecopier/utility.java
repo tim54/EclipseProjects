@@ -26,6 +26,30 @@ public class utility {
 		}
 	}
 	
+	public static int countFilesInDirectory(File file){
+		
+		String dirname = file.getAbsolutePath();
+		int fileCounter = 0;
+		
+		if (file.isDirectory()) {
+			System.out.println("Directory is: " + file.toString());
+			String s[] = file.list();
+			for (int i = 0; i < s.length; i++){
+				File f = new File(dirname + "/" + s[i]);
+				if (f.isDirectory()){
+					System.out.println(s[i] + " is a directory");
+				} else {
+					System.out.println(s[i] + " is a file");
+					fileCounter++;
+				}
+			}
+		} else {
+			System.out.println(dirname + " is not a directory");
+		}
+		
+		return fileCounter;
+	}
+	
 	public static void emptyDirectory(File dirname) {
 		if (!dirname.exists()) { System.out.println("Directory does not exist"); return; }
 		
@@ -69,5 +93,7 @@ public class utility {
 		int filesNumber = 10;
 		
 		directoryGenerator(dirname, filePrefix, filesNumber);
+		
+		emptyDirectory(dirname);
 	}
 }
